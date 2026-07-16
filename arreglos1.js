@@ -1,0 +1,2 @@
+let edadLadoIzquierdo = [];
+let edadLadoDerecha = [];
