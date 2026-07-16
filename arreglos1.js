@@ -17,9 +17,21 @@ function pintarArregloIzquierda() {
 
         let miEdad = edadLadoIzquierdo[i]; //guardamos la edad actual en una variable
 
-        contenidoTabla += "<tr><td>"; 
+        contenidoTabla += "<tr>"; //abrimos la tabla
+
+        contenidoTabla += "<td>"; 
         contenidoTabla += miEdad;       //creamos la tabla segun la edad que pusimos y concatenamos
-        contenidoTabla += "</td></tr>";
+        contenidoTabla += "</td>";
+
+        contenidoTabla += "<td>";
+        contenidoTabla += "<button class='btn-eliminar'>Eliminar</button>";//columna del boton eliminar
+        contenidoTabla += "</td>";
+
+        contenidoTabla += "<td>";
+        contenidoTabla += "<button class='btn-mover'>Mover➜</button>";//columna mover derecha
+        contenidoTabla += "</td>";
+
+        contenidoTabla += "</tr>"; //cerramos tabla
     }
     cmpTabla.innerHTML = contenidoTabla; //metemos todo el texto dentro del html
 }
