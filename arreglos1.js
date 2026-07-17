@@ -24,7 +24,7 @@ function pintarArregloIzquierda() {
         contenidoTabla += "</td>";
 
         contenidoTabla += "<td>";
-        contenidoTabla += "<button class='btn-eliminar'>Eliminar</button>";//columna del boton eliminar
+        contenidoTabla += "<button class='btn-eliminar' onclick='eliminarIzquierdo(" + i + ")'>Eliminar</button>";//columna del boton eliminar
         contenidoTabla += "</td>";
 
         contenidoTabla += "<td>";
@@ -34,4 +34,9 @@ function pintarArregloIzquierda() {
         contenidoTabla += "</tr>"; //cerramos tabla
     }
     cmpTabla.innerHTML = contenidoTabla; //metemos todo el texto dentro del html
+}
+
+function eliminarIzquierdo(indice) {
+    edadLadoIzquierdo.splice(indice, 1); //splice es para eliminar exatamente un elemento en esa posición
+    pintarArregloIzquierda(); //vuelve a pintar el arreglo izquierdo
 }
