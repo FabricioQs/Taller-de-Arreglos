@@ -28,12 +28,27 @@ function pintarArregloIzquierda() {
         contenidoTabla += "</td>";
 
         contenidoTabla += "<td>";
-        contenidoTabla += "<button class='btn-mover'>Mover➜</button>";//columna mover derecha
+        contenidoTabla += "<button class='btn-mover' onclick='moverHaciaDerecha(" + i + ")'>Mover ➜</button>"; //mover lado derecho
         contenidoTabla += "</td>";
 
         contenidoTabla += "</tr>"; //cerramos tabla
     }
     cmpTabla.innerHTML = contenidoTabla; //metemos todo el texto dentro del html
+}
+
+function moverHaciaDerecha(indice) {
+    // Obtener el valor del arreglo izquierdo en esa posición
+    let edadAMover = edadLadoIzquierdo[indice];
+    
+    // Agregarlo al arreglo derecho usando .push()
+    edadLadoDerecha.push(edadAMover);
+    
+    // Eliminar el elemento del arreglo izquierdo usando .splice()
+    edadLadoIzquierdo.splice(indice, 1);
+    
+    // Volver a pintar ambos arreglos
+    pintarArregloIzquierda();
+    pintarArregloDerecho();
 }
 
 function eliminarIzquierdo(indice) {
