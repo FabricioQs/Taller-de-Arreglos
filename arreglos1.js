@@ -70,3 +70,7 @@ function pintarArregloDerecho() {
     cmpTabla.innerHTML = contenidoTabla; // inyectamos el HTML
 }
 
+function eliminarDerecho(indice) {
+    edadLadoDerecha.splice(indice, 1); //elimniar lado derecho
+    pintarArregloDerecho();
+}
