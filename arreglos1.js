@@ -40,3 +40,33 @@ function eliminarIzquierdo(indice) {
     edadLadoIzquierdo.splice(indice, 1); //splice es para eliminar exatamente un elemento en esa posición
     pintarArregloIzquierda(); //vuelve a pintar el arreglo izquierdo
 }
+
+function pintarArregloDerecho() {
+    let cmpTabla = document.getElementById("tablaDerecha"); // recuperamos el cuerpo de la tabla derecha
+    let contenidoTabla = ""; // preparamos la variable vacia 
+
+    for (let i = 0; i < edadLadoDerecha.length; i++) { // usamos edadLadoDerecha 
+        let miEdad = edadLadoDerecha[i]; // guardamos la edad actual
+
+        contenidoTabla += "<tr>"; // abrimos la fila
+
+        // Columna del boton mover 
+        contenidoTabla += "<td>";
+        contenidoTabla += "<button class='btn-mover'>Mover⬅</button>";
+        contenidoTabla += "</td>";
+
+        // 2. Columna del valor (la edad)
+        contenidoTabla += "<td>"; 
+        contenidoTabla += miEdad; 
+        contenidoTabla += "</td>";
+
+        // 3. Columna del boton eliminar (llama a eliminarDerecho)
+        contenidoTabla += "<td>";
+        contenidoTabla += "<button class='btn-eliminar' onclick='eliminarDerecho(" + i + ")'>Eliminar</button>";
+        contenidoTabla += "</td>";
+
+        contenidoTabla += "</tr>"; // cerramos fila
+    }
+    cmpTabla.innerHTML = contenidoTabla; // inyectamos el HTML
+}
+
